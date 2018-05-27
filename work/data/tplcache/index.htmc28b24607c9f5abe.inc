@@ -1,0 +1,44 @@
+<?php
+$z[0]=Array("global","",254,280);
+$z[0][4]['name']="cfg_webname";
+$z[1]=Array("global","",324,354);
+$z[1][4]['name']="cfg_description";
+$z[2]=Array("global","",391,418);
+$z[2][4]['name']="cfg_keywords";
+$z[3]=Array("channel","\r\n      <li><a href=\"[field:typeurl/]\" >[field:typename/]</a></li>\r\n      ",1106,1338);
+$z[3][4]['type']="top";
+$z[3][4]['row']="10";
+$z[3][4]['currentstyle']="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>";
+$z[4]=Array("type","<a href=\"[field:typelink/]\"><img src=\"/skin/images/more01.jpg\" border=\"0\" /></a>",7288,7403);
+$z[4][4]['typeid']="10";
+$z[5]=Array("arclist","\r\n            <div class=\"h_item_box\">\r\n              <dl>\r\n                <dt><a href=\"[field:arcurl/]\" title=\"[field:title/]\" target=\"_blank\">[field:title/]</a></dt>\r\n                <dd><i>[field:pubdate function=\"MyDate('Y-m-d',@me)\"/]</i>\r\n                  <p> [field:info/]...</p>\r\n                </dd>\r\n              </dl>\r\n            </div>\r\n            ",7581,8020);
+$z[5][4]['row']="5";
+$z[5][4]['titlelen']="32";
+$z[5][4]['typeid']="10";
+$z[5][4]['infolen']="120";
+$z[6]=Array("type","<a href=\"[field:typelink/]\"><img src=\"/skin/images/more01.jpg\" border=\"0\" /></a>",9090,9204);
+$z[6][4]['typeid']="1";
+$z[7]=Array("sql"," \r\n        [field:content  function='cn_substr(html2text(@me),280)'/]........... \r\n        ",9263,9425);
+$z[7][4]['sql']="Select content from dede_arctype where id=1";
+$z[8]=Array("type","<a href=\"[field:typelink/]\"><img src=\"/skin/images/more01.jpg\" border=\"0\" /></a>",9609,9723);
+$z[8][4]['typeid']="4";
+$z[9]=Array("arclist","\r\n                  <td style=\"padding:0 20px 0 0;\"><p><i><a href=\"[field:arcurl/]\" title=\"[field:title/]\" target=\"_blank\"><img src=\"[field:picname/]\" border=\"0\" onload=\"DrawImage(this,200,140);\" /></a></i><u><a href=\"[field:arcurl/]\" title=\"[field:title/]\" target=\"_blank\">[field:title/]</a></u></p></td>\r\n                  ",10028,10411);
+$z[9][4]['typeid']="4";
+$z[9][4]['row']="7";
+$z[9][4]['titlelen']="32";
+$z[10]=Array("type","<a href=\"[field:typelink/]\" title=\"[field:typename/]\"><img src=\"/skin/images/20148260335996.jpg\" width=\"210\" height=\"80\" border=\"0\" /></a>",11573,11746);
+$z[10][4]['typeid']="14";
+$z[11]=Array("type","<a href=\"[field:typelink/]\" title=\"[field:typename/]\"><img src=\"/skin/images/20148260322475.jpg\" width=\"210\" height=\"80\" border=\"0\" /></a>",12062,12234);
+$z[11][4]['typeid']="3";
+$z[12]=Array("type","<a href=\"[field:typelink/]\" title=\"[field:typename/]\"><img src=\"/skin/images/20148260344960.jpg\" width=\"210\" height=\"80\" border=\"0\" /></a>",12552,12725);
+$z[12][4]['typeid']="16";
+$z[13]=Array("global","",13103,13125);
+$z[13][4]['name']="cfg_tel";
+$z[14]=Array("global","",13152,13173);
+$z[14][4]['name']="cfg_cz";
+$z[15]=Array("global","",13279,13300);
+$z[15][4]['name']="cfg_dz";
+$z[16]=Array("include","",15583,15620);
+$z[16][4]['filename']="footer.htm";
+
+?>

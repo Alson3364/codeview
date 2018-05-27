@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="design by www.szcmjxsb.com" />
+<link href="/skin/css/style.css" rel="stylesheet" type="text/css" />
+<script src="/skin/js/ie6.js"></script>
+<script type=text/javascript src="/skin/js/h_javascript.js"></script>
+<script> 
+window.onload=function(){check_bodywidth('bodybox',1110);} 
+</script>
+<script type="text/javascript" src="/skin/js/drawimage.js"></script>
+</head>
+<body>
+<div id="bodybox"> 
+  <div class="top_box"> <em><a href="/"><strong><b class="logo">超迈机械</b></strong><!-- <img src="/skin/images/logo.png" border="0" style="margin-left:80px;"/> --></a></em>
+    <ul>
+      <li><a href="/" class="con">首 页</a></li>
+      {dede:channel type='top' row='10' currentstyle="
+      <li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>
+      "}
+      <li><a href="[field:typeurl/]" >[field:typename/]</a></li>
+      {/dede:channel}
+    </ul>
+  </div>
+  <div class="ad_box"> 
+    
+    <div class="h_ad_box" id="adbox">
+		<style type="text/css">
+			.ad_sliderContainer{ margin:0px; width:100%; height:435px; float:left; display:inline; overflow:hidden; }
+			.ad_sliderContainer .ad_Container{ position:relative; width:100%; height:435px; overflow:hidden; }
+
+			.ad_Container .ad_imgcon{ position:absolute; z-index:5; top:0px; right:0px; width:100%; height:100%; background-position:center top; background-repeat:no-repeat; }
+
+			.ad_Container .ad_button{ position:absolute; z-index:10; left:0px; bottom:35px; width:100%; height:14px; text-align:center; }
+			.ad_Container .ad_btn{ margin:0 3px; width:18px; height:8px; background:url(/skin/images/yandian.jpg) no-repeat left top; border:0px; cursor:pointer; display:inline-block; }
+			.ad_Container .ad_btn_sel{ background:url(/skin/images/yandian.jpg) no-repeat right top; }
+
+
+			.ad_Container .ad_prev,.ad_Container .ad_next{ position:absolute; z-index:8; top:222px; }
+			.ad_Container .ad_prev{ left:0px; }
+			.ad_Container .ad_next{ right:0px; }
+
+			.ad_Container .ad_prev a,.ad_Container .ad_next a{ display:block; width:26px; height:46px;}
+
+			.ad_Container .ad_prev a:link,.ad_Container .ad_prev a:visited{background:url(/skin/images/paddle_prev.png) no-repeat center;}
+			.ad_Container .ad_prev a:hover,.ad_Container .ad_prev a:active{background:url(/skin/images/paddle_prev2.png) no-repeat center;}
+
+			.ad_Container .ad_next a:link,.ad_Container .ad_next a:visited{background:url(/skin/images/paddle_next.png) no-repeat center;}
+			.ad_Container .ad_next a:hover,.ad_Container .ad_next a:active{background:url(/skin/images/paddle_next2.png) no-repeat center;}
+		</style>
+      <div class="ad_sliderContainer">
+        <div class="ad_Container"> 
+          <script>
+			function doChange1(dd)
+			{
+			
+				if(dd>2)
+				{
+					doChange(1);
+				}else{
+					if(dd<1)
+					{
+						doChange(2);
+					}else{
+						doChange(dd);
+					}
+				}
+			}
+			</script>
+          <div class="ad_prev"><a href="javascript:doChange1(tindex-1);"></a></div>
+          <div class="ad_next"><a href="javascript:doChange1(tindex+1);"></a></div>
+          <div id="ad_imgbox1" class="ad_imgcon" style="background-image:url('/skin/images/banner1.jpg'); "> <a href="/" style="width:100%; height:435px; float:left; display:block;"  target="_blank"></a> </div>
+          <div id="ad_imgbox2" class="ad_imgcon" style="background-image:url('/skin/images/banner2.jpg'); display:none;"> <a href="/" style="width:100%; height:435px; float:left; display:block;"  target="_blank"></a> </div>
+          <div class="ad_button"> <span id="ad_btnnum1" onclick="doChange(1)" class="ad_btn ad_btn_sel"></span> <span id="ad_btnnum2" onclick="doChange(2)" class="ad_btn"></span> </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="/skin/js/jquery-1.8.3.min.js"></script> 
+      <script type="text/javascript">
+$(".ad_prev a,.ad_next a").hide();
+var ad_speed = 5000;//主题切换速度
+var ad_speed3 = 600;//背景移动速度
+var BgMar; 
+$(document).ready(function(){
+
+
+	var h=document.documentElement.clientHeight;
+	BgMar = setInterval("doChange(0)",ad_speed);
+	$(".ad_sliderContainer").hover(function(){
+		$(".ad_prev a,.ad_next a").show();
+	},function(){
+		$(".ad_prev a,.ad_next a").hide();
+	})
+
+});
+var tindex=1;
+var showindex=0;
+var currentindex=1;
+//切换操作
+function doChange(index){
+	if(index==0){
+		tindex++;
+	}else{
+		tindex = index;
+		clearInterval(BgMar);
+		changeTheme(tindex);	
+		BgMar = setInterval("doChange(0)",ad_speed);
+		return;
+	}
+	if(tindex>2)
+	{
+		tindex=1;
+	}
+	changeTheme(tindex);
+}
+//切换操作执行
+function changeTheme(index){
+	$(".ad_btn").removeClass('ad_btn_sel');
+	$("#ad_btnnum"+index).addClass('ad_btn_sel');
+	
+	var w1 = document.getElementById("adbox").offsetWidth;
+	var w2 = w1-w1*2;
+	$("#ad_imgbox"+index).stop();
+	$("#ad_imgbox"+currentindex).stop();
+	
+
+	if(currentindex<index){
+		$("#ad_imgbox"+index).show().css("right",w1-20).animate({ right:0},ad_speed3,null,function(){});
+		$("#ad_imgbox"+currentindex).animate({ right:w2},ad_speed3,null,function(){$(this).hide();});
+	}
+	if(currentindex>index){
+		$("#ad_imgbox"+index).show().css("right",w1-20).animate({ right:0},ad_speed3,null,function(){});
+		$("#ad_imgbox"+currentindex).animate({ right:w2},ad_speed3,null,function(){$(this).hide();});
+	}
+	currentindex = index;
+}
+</script> 
+    </div>
+    
+  </div>
+  
+  <div class="h_mid_con1">
+    <div class="left_box">
+      <div class="left_ad"> 
+        <script type="text/javascript" src="/skin/js/jquery-1.4.js"></script> 
+        <script type="text/javascript" src="/skin/js/ad_js.js"></script>
+        <style type="text/css">
+#ad_banner { position:relative; margin:0px; padding:0px; width:390px; height:150px; text-align:left; float:left; display:inline; overflow:hidden; }
+#ad_banner ul {position:absolute; margin:0px; padding:0px; list-style-type:none; filter: Alpha(Opacity=80);opacity:0.8; z-index:8; bottom:8px; right:10px; }
+#ad_banner ul li { margin:0 3px; padding:0px 4px; height:16px; line-height:16px; border:1px solid #aaa; background:#F9F9F9; cursor:pointer; float:left; display:block;}
+#ad_banner ul li.on { background:#e60000; color:#fff; }
+#banner_list a{ position:absolute; } <!-- 让四张图片都可以重叠在一起-->
+</style>
+        <div id="ad_banner">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+          </ul>
+          <div id="banner_list"> <a style="display:inline;" target="_blank"><img src="/skin/images/2014825234924682.jpg" width="390" height="150" border="0"></a> <a style="display:inline;" target="_blank"><img src="/skin/images/2014825234936750.jpg" width="390" height="150" border="0"></a> </div>
+        </div>
+      </div>
+      <div class="right_con">
+        <div class="h_typename"><b>新闻资讯</b><i>News center</i><em>{dede:type typeid='10'}<a href="[field:typelink/]"><img src="/skin/images/more01.jpg" border="0" /></a>{/dede:type}</em></div>
+        
+        <SCRIPT type=text/javascript src="/skin/js/common.js"></SCRIPT>
+        <div class="news_rollBox">
+          <div class="h_Box" id="ISL_Cont_1"> {dede:arclist row=5 titlelen=32 typeid='10' infolen='120'}
+            <div class="h_item_box">
+              <dl>
+                <dt><a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:title/]</a></dt>
+                <dd><i>[field:pubdate function="MyDate('Y-m-d',@me)"/]</i>
+                  <p> [field:info/]...</p>
+                </dd>
+              </dl>
+            </div>
+            {/dede:arclist} </div>
+          <div class="h_button">
+            <div id="LeftArr_1" class="h_left"></div>
+            <div id="RightArr_1" class="h_right"></div>
+          </div>
+        </div>
+        <SCRIPT language=javascript type=text/javascript>
+<!--//--><![CDATA[//><!--
+  var scrollPic_1 = new ScrollPic();
+  scrollPic_1.scrollContId   = "ISL_Cont_1"; //内容容器ID
+  scrollPic_1.arrLeftId      = "LeftArr_1";//左箭头ID
+  scrollPic_1.arrRightId     = "RightArr_1"; //右箭头ID
+  scrollPic_1.frameWidth     = 310;//显示框宽度
+  scrollPic_1.pageWidth      = 310; //翻页宽度
+  scrollPic_1.speed          = 10; //移动速度(单位毫秒，越小越快)
+  scrollPic_1.space          = 10; //每次移动像素(单位px，越大越快)
+  scrollPic_1.autoPlay       = true; //自动播放
+  scrollPic_1.autoPlayTime   = 6; //自动播放间隔时间(秒)
+  scrollPic_1.initialize(); //初始化
+//--><!]]>
+</SCRIPT> 
+      </div>
+    </div>
+    <div class="right_box">
+      <div class="h_typename"><b>公司简介</b><i>About us</i><em>{dede:type typeid='1'}<a href="[field:typelink/]"><img src="/skin/images/more01.jpg" border="0" /></a>{/dede:type}</em></div>
+      <div class="h_con"> &nbsp; &nbsp; &nbsp;{dede:sql sql='Select content from dede_arctype where id=1'} 
+        [field:content  function='cn_substr(html2text(@me),280)'/]........... 
+        {/dede:sql}</div>
+    </div>
+  </div>
+  <div class="h_mid_con2">
+    <div class="main_box">
+      <div class="h_typename"><b>产品中心</b><i>Product center</i><em style="margin: 0 10px;">{dede:type typeid='4'}<a href="[field:typelink/]"><img src="/skin/images/more01.jpg" border="0" /></a>{/dede:type}</em></div>
+      <!--下面是向左滚动代码-->
+      
+      <div id="colee_left" class="h_conlist">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td id="colee_left1" valign="top"><table cellpadding="0" cellspacing="0" border="0">
+                <tr> {dede:arclist typeid='4' row=7 titlelen=32}
+                  <td style="padding:0 20px 0 0;"><p><i><a href="[field:arcurl/]" title="[field:title/]" target="_blank"><img src="[field:picname/]" border="0" onload="DrawImage(this,200,140);" /></a></i><u><a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:title/]</a></u></p></td>
+                  {/dede:arclist} </tr>
+              </table></td>
+            <td id="colee_left2" valign="top"></td>
+          </tr>
+        </table>
+      </div>
+      <script>
+//使用div时，请保证colee_left2与colee_left1是在同一行上.
+var speed=20    //速度数值越大速度越慢
+var colee_left2=document.getElementById("colee_left2");
+var colee_left1=document.getElementById("colee_left1");
+var colee_left=document.getElementById("colee_left");
+colee_left2.innerHTML=colee_left1.innerHTML
+function Marquee3(){
+if(colee_left2.offsetWidth-colee_left.scrollLeft<=0)//offsetWidth 是对象的可见宽度
+colee_left.scrollLeft-=colee_left1.offsetWidth//scrollWidth 是对象的实际内容的宽，不包边线宽度
+else{
+colee_left.scrollLeft++
+}
+}
+var MyMar3=setInterval(Marquee3,speed)
+colee_left.onmouseover=function() {clearInterval(MyMar3)}
+colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
+</script> 
+      
+      <!--向左滚动代码结束--> 
+      
+    </div>
+  </div>
+  <div class="h_mid_con3">
+  <div class="left_box">
+      <div class="h_typename"><b>经典案例</b><i>Case</i></div>
+      <dl>
+        <dt>{dede:type typeid='14'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20148260335996.jpg" width="210" height="80" border="0" /></a>{/dede:type}</dt>
+        <dd>苏州超迈机械设备有限公司，是一家专业从事各品牌，空压机，干燥机，吸附干机，过滤器，电气自动化......</dd>
+      </dl>
+    </div>
+    <div class="left_box">
+      <div class="h_typename"><b>荣誉资质</b><i>Honor</i></div>
+      <dl>
+        <dt>{dede:type typeid='3'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20148260322475.jpg" width="210" height="80" border="0" /></a>{/dede:type}</dt>
+        <dd>公司以专注用心服务，为核心，一切以客户为中心，希望我们通过专业技术和不懈努力，能够进一步发展......</dd>
+      </dl>
+    </div>
+    <div class="left_box">
+      <div class="h_typename"><b>技术支持</b><i>Support</i></div>
+      <dl>
+        <dt>{dede:type typeid='16'}<a href="[field:typelink/]" title="[field:typename/]"><img src="/skin/images/20148260344960.jpg" width="210" height="80" border="0" /></a>{/dede:type}</dt>
+        <dd>在开拓市场的同时，优质用心的服务赢得众多企业的信赖和好评，我们相信通过我们不断努力和追求，一定......</dd>
+      </dl>
+    </div>
+    <div class="right_box">
+      <div class="h_typename"><b>联系我们</b><i>Contact us</i></div>
+      <dl>
+        <dt><img src="" border="0" /></dt>
+        <dd>电话：{dede:global.cfg_tel/}<br />
+          传真：{dede:global.cfg_cz/}<br />
+          Q  Q：{dede:global.cfg_qq/}<br />
+          网站：www.szcmjxsb.com<br />
+          地 址：{dede:global.cfg_dz/}</dd>
+      </dl>
+    </div>
+  </div>
+    <div class="side">
+      <style>
+        *{margin:0;padding:0;list-style-type:none;}
+        a,img{border:0;}
+        /* side */
+        .side{position:fixed;width:54px;height:275px;right:0;top:214px;z-index:100;}
+        .side ul li{width:54px;height:54px;float:left;position:relative;border-bottom:1px solid #444;}
+        .side ul li .sidebox{position:absolute;width:54px;height:54px;top:0;right:0;transition:all 0.3s;background:#000;opacity:0.8;filter:Alpha(opacity=80);color:#fff;font:14px/54px "微软雅黑";overflow:hidden;}
+        .side ul li .sidetop{width:54px;height:54px;line-height:54px;display:inline-block;background:#000;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
+        .side ul li .sidetop:hover{background:#ae1c1c;opacity:1;filter:Alpha(opacity=100);}
+        .side ul li img{float:left;}
+      </style>
+        <ul>
+            <li>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1229385527&site=qq&menu=yes" target="_blank" class="im-qq qq-a">
+                    <div class="sidebox"><img src="/skin/images/side_icon04.png">QQ客服</div>
+                </a>
+            </li>
+            <li style="border:none;"><a href="javascript:goTop();" class="sidetop"><div class="sidebox"><img src="/skin/images/side_icon05.png">返回顶部</div></a></li>
+        </ul>
+    </div>
+    <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".side ul li").hover(function() {
+                $(this).find(".sidebox").stop().animate({
+                    "width": "124px"
+                }, 200).css({
+                    "opacity": "1",
+                    "filter": "Alpha(opacity=100)",
+                    "background": "#ae1c1c"
+                })
+            }, function() {
+                $(this).find(".sidebox").stop().animate({
+                    "width": "54px"
+                }, 200).css({
+                    "opacity": "0.8",
+                    "filter": "Alpha(opacity=80)",
+                    "background": "#000"
+                })
+            });
+        });
+        //回到顶部函数
+        function goTop() {
+            $('html,body').animate({
+                'scrollTop': 0
+            }, 300);
+        }
+    </script>
+  {dede:include filename="footer.htm"/}  
+</div>
+</body>
+</html>

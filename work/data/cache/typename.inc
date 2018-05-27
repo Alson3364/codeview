@@ -1,0 +1,29 @@
+<?php
+$typeArr[1] = '关于我们';
+$typeArr[2] = '公司介绍';
+$typeArr[3] = '荣誉资质';
+$typeArr[4] = '产品中心';
+$typeArr[5] = '空气压缩机';
+$typeArr[6] = '干燥机';
+$typeArr[7] = '过滤器';
+$typeArr[8] = '机械设备及配件';
+$typeArr[9] = '机电产品';
+$typeArr[10] = '化工产品';
+$typeArr[11] = '五金交电';
+$typeArr[12] = '建材';
+$typeArr[13] = '电子产品';
+$typeArr[14] = '润滑油';
+$typeArr[15] = '管道工程';
+$typeArr[16] = '日用品及办公用品';
+$typeArr[17] = '新闻动态';
+$typeArr[18] = '公司新闻';
+$typeArr[19] = '行业动态';
+$typeArr[20] = '成功案例';
+$typeArr[21] = '经典案例';
+$typeArr[22] = '技术服务';
+$typeArr[23] = '技术支持';
+$typeArr[24] = '设备及配件安装维护保养';
+$typeArr[25] = '工程技术咨询';
+$typeArr[26] = '合同能源管理服务';
+$typeArr[27] = '联系我们';
+?>

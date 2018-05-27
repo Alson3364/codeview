@@ -1,0 +1,1 @@
+<a href="[field:typelink/]"><span>友情链接：</span></a>

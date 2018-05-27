@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="renderer" content="webkit"><title>{dede:field.title/}</title>
+	<meta name="keywords" content="{dede:field name='keywords'/}" />
+	<meta name="description" content="{dede:field name='description'  function='html2text(@me)'/}" />
+	<meta name="robots" content="all" />
+	<link rel=stylesheet type=text/css href="/style/style.css">
+	<link href="/skin/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="/skin/js/ie6.js"></script>
+	<script type=text/javascript src="/skin/js/h_javascript.js"></script>
+	<script> 
+		window.onload=function(){check_bodywidth('bodybox',1110);} 
+	</script>
+	<script type="text/javascript" src="/style/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/style/jq-plug.js"></script>
+	<script type="text/javascript" src="/style/jcarousellite_1.0.1.js"></script>
+	<script type="text/javascript" src="/style/myfocus-2.0.4.min.js"></script>
+<script type="text/javascript" src="/style/jquery.SuperSlide.js"></script><!--[if IE 6]><style type="text/css">
+.mypng img {
+azimuth: expression(
+this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",
+this.src = "/images/img/transparent.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')",
+this.runtimeStyle.backgroundImage = "none")),this.pngSet=true);
+}
+
+</style><![endif]--><style></style><script>
+	$(function(){
+		var myDate = new Date();
+		var y = myDate.getFullYear();
+		var m = myDate.getMonth() + 1;
+		var d = myDate.getDate();
+		var w = myDate.getDay(); 
+		var arr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+
+		$("#top-time").html("今天是" + y + "年" + m + "月" + d + "日 " + arr[w] );
+
+	});
+</script><script>
+	category="0";
+	$(function(){
+		if(category){
+			var catid  = "cat-id-"+category;
+			$(".cat_con").find('#'+catid).click(function(){
+				$(this).parents(".children").show();
+				$(this).addClass("pos");
+				$(this).parent().find("ul").eq(0).show(200);
+			}).trigger("click");
+			$(".cat_con").find('#'+catid).addClass('linkon');
+			$(".cat_con").find('#'+catid).parents(".cat-item").find(".cat-name").addClass("pos");
+		}
+		var proid ="cat-id-"+$(".proid").val();
+		$(".cat_con").find('#'+proid).click(function(){
+			$(this).parents(".children").show();
+			$(this).addClass("pos");
+			$(this).parent().find("ul").eq(0).show(200);
+		}).trigger("click");
+		$(".cat_con").find('#'+proid).addClass('linkon');
+		$(".cat_con").find('#'+proid).parents(".cat-item").find(".cat-name").addClass("pos");
+	})
+</script><!--library挂件baidu--></head>
+<body >
+	{dede:include filename="head.htm"/}
+	<div class="clearfix"></div>
+	<div class="wrap">
+		<div class="middle">
+			{dede:include filename="left.htm"/}
+			<div id="jy-right">
+				<div class="rtop">
+					<div style="color:#fff; font-size:16px; font-weight:bold; height:30px;width:160px; line-height:40px;background:url(/skin/images/itembg.png);">
+						<span>{dede:field name='typename' function=”GetTypeName(@me)”/}</span>
+					</div>
+				</div>
+
+				<!-- product info -->
+				<div class="box_750">
+					<div class="modmiddle">
+						
+
+						<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+							<tbody>
+								{dede:list pagesize ='9'}
+								<tr>
+									<td width="82%" height="40" align="left" valign="middle" class="heis" style=" border-bottom:#cccccc dashed 1px"><a href="[field:arcurl/]"><span style="color:#055a97; font-weight:bold">[公司新闻]</span></a>&nbsp;&nbsp;<a href="[field:arcurl/]" class="heis" >&nbsp; &gt;&gt; [field:title/]</a></td>
+									<td width="18%" align="right" valign="middle" class="heis" style=" border-bottom:#cccccc dashed 1px">[[field:pubdate function="MyDate('Y-m-d',@me)"/]]&nbsp; </td>
+								</tr>
+								{/dede:list}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="pagelist">
+					<ul>
+						{dede:pagelist listsize='5' listitem=''/}
+					</ul>
+				</div>
+				<div class="right-bj"></div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	{dede:include filename="footer.htm"/}
+</body></html>

@@ -1,0 +1,5 @@
+<tr>
+                                                                                        <td width="5%" height="25" align="center" class="heis" style="color: #BE0404; font-size: 12px; border-bottom:#9a9a9a dashed 1px"><img src="/skin/images/dot.jpg"></td>
+                                                                                        <td width="69%" height="30" align="left" class="heis" style=" border-bottom:#9a9a9a dashed 1px"><a href="news.asp?ClassID=7&amp;ID=6" class="heis">[field:title/]</a></td>
+                                                                                        <td width="25%" align="right" class="heis" style=" border-bottom:#9a9a9a dashed 1px"><i>[field:pubdate function="MyDate('Y-m-d',@me)"/]</i></td>
+                                                                                    </tr>

@@ -1,0 +1,1 @@
+<td align="left" valign="top" class="footmenu" style="padding:15px 15px 0 15px;color: #FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[field:body function='cn_substr(html2text(@me),1000)'/]</td>
