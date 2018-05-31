@@ -18,8 +18,8 @@
         <li><router-link :to="{name:'loginLink'}" v-show="!isLogin" class="nav-link">登录</router-link></li>
       
         <!-- 当登录状态isLogin为true时，显示下列两个li -->
-        <li><a class="nav-link"> {{currentUser}}</a></li>
-        <li><router-link :to="{name:'loginLink'}" v-show="isLogin" ><a class="nav-link">[退出]</a></router-link></li>
+        <li class="nav-link"><a> {{currentUser}}</a></li>
+        <li><router-link :to="{name:'loginLink'}" v-show="isLogin" class="nav-link">[退出]</router-link></li>
         <li><router-link :to="{name:'registerLink'}" v-show="!isLogin" class="nav-link">注册</router-link></li>
       </ul>
     </nav>
@@ -34,11 +34,11 @@ export default {
 	// }
 	computed: {
 		currentUser() {
-			return this.$store.getters.currentUser;
+			return this.$store.getters.currentUser
 		},
 		isLogin() {
-			return this.$store.getters.isLogin;
-		},
+			return this.$store.getters.isLogin
+		}
 	},
 };
 </script>

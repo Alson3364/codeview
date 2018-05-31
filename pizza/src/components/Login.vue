@@ -29,10 +29,10 @@ export default {
       password:''
     }
   },
-  // 组件内的守卫 设置组件内守卫，当退出登录后，清空用户账户信息
-  beforeEnter: (to, from, next) => {
-      // this.$store.dispatch("setUser",null)//不能使用this，无法识别，必须使用next()方法传递一个回调函数，使用vm实例
-      next(vm =>  vm.$store.dispatch("setUser",null))
+  // 组件内的守卫 设置组件内守卫，当退出登录后，清空用户账户信息,header内不再显示用户名
+  beforeRouteEnter: (to, from, next) => {
+    // this.$store.dispatch("setUser",null)//不能使用this，无法识别，必须使用next()方法传递一个回调函数，使用vm实例
+    next(vm => vm.$store.dispatch("setUser",null))
   },
   methods:{
     onSubmit(){
