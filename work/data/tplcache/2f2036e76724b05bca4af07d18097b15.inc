@@ -1,5 +1,0 @@
-<tr>
-                                                                                        <td width="5%" height="25" align="center" class="heis" style="color: #BE0404; font-size: 12px; border-bottom:#9a9a9a dashed 1px"><img src="/skin/images/dot.jpg"></td>
-                                                                                        <td width="69%" height="30" align="left" class="heis" style=" border-bottom:#9a9a9a dashed 1px"><a href="[field:arcurl/]" title="[field:title/]"  class="heis">[field:title/]</a></td>
-                                                                                        <td width="25%" align="right" class="heis" style=" border-bottom:#9a9a9a dashed 1px"><b>[</b>[field:pubdate function="MyDate('Y-m-d',@me)"/]<b>]</b></td>
-                                                                                    </tr>

@@ -1,1 +1,0 @@
-<div class="hd"><span class="blk_t blk_t01"><a href="[field:typelink/]">[field:typename/]</a></span> </div>

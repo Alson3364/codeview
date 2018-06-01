@@ -1,6 +1,0 @@
-0.0.0.0||/index.php?upcache=1||SELECT id,typename,typedir,isdefault,ispart,defaultname,namerule2,moresite,siteurl,sitepath 
-                          FROM `dede_arctype` WHERE id='57'' LIMIT 0,1;||unusual character
-0.0.0.0||/index.php?upcache=1||SELECT id,typename,typedir,isdefault,ispart,defaultname,namerule2,moresite,siteurl,sitepath 
-                          FROM `dede_arctype` WHERE id='57'' LIMIT 0,1;||unusual character
-0.0.0.0||/index.php?upcache=1||SELECT id,typename,typedir,isdefault,ispart,defaultname,namerule2,moresite,siteurl,sitepath 
-                          FROM `dede_arctype` WHERE id='57'' LIMIT 0,1;||unusual character

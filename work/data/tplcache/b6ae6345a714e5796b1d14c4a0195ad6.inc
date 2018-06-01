@@ -1,1 +1,0 @@
-<li><a href="product.asp?Classid=1" style="margin:5px auto;">[field:title/]</a></li>

@@ -1,4 +1,0 @@
-<li><a href="[field:arcurl/]" target="_blank" title="[field:title/]"><div class="l ll t_c"><img height="134" src="[field:picname/]"><ins></ins><h4 class="date fmyh"></h4></div></a><div class="r rr"><a href="[field:arcurl/]" target="_blank" title="[field:title/]"><h3 class="ttuc"><font>></font><strong class="fmyh"> [field:title/]</strong><a class="ff" href="[field:arcurl/]" target="_blank" title="点击查看更多">[查看更多]</a></h3></a><h4 class="news_info"><span>发布时间：</span><span>[field:pubdate function="GetDateTimeMK(@me)" /]</span></h4><div class="news_intro">
-            [field:description function="cn_substr(@me,150)"/]... 
-            
-          </div></div></li>
