@@ -9,27 +9,24 @@ import Seller from '@/components/seller/Seller'
 
 Vue.config.productionTip = false
 
-// 使用路由
 Vue.use(VueRouter)
 
-// 设置路由
 const routes = [
-  {path:'/',redirect: "/goods"},//默认路由
+  {path:"/",redirect:"/goods"},
   {path:"/goods",component:Goods},
   {path:"/ratings",component:Ratings},
   {path:"/seller",component:Seller}
 ]
 
-// 实例化一个router
+// 实例化
 const router = new VueRouter({
   routes,
-  linkActiveClass:"active",//给链接添加激活样式
+  linkActiveClass:"active"
 })
-
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  // 将router挂载带Vue实例中
   router,
   components: { App },
   template: '<App/>'

@@ -1,4 +1,4 @@
-# mt-sell
+# seller
 
 > A Vue.js project
 

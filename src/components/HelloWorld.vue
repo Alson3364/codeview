@@ -1,6 +1,6 @@
 <template>
-  <div class="heratingsader">
-    评价信息
+  <div class="hello">
+    
   </div>
 </template>
 
