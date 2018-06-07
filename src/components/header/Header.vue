@@ -123,15 +123,15 @@ export default {
 	computed: {
 		// 头部背景图
 		head_pic_url() {
-			return 'background-image: url(' + this.poiInfo.head_pic_url + ');';
+			return 'background-image: url(' + this.poiInfo.head_pic_url + ');'
 		},
 		// 商家头像
 		head_bg() {
-			return 'background-image: url(' + this.poiInfo.pic_url + ');';
+			return 'background-image: url(' + this.poiInfo.pic_url + ');'
 		},
 		// 公告详情页背景图
 		detail_bg() {
-			return 'background-image: url(' + this.poiInfo.poi_back_pic_url + ');';
+			return 'background-image: url(' + this.poiInfo.poi_back_pic_url + ');'
 		},
 	},
 	methods: {

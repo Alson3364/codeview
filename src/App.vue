@@ -4,10 +4,13 @@
     <app-header :poiInfo="poiInfo"></app-header>
 
     <!-- 导航 -->
-    <app-nav></app-nav>
+    <app-nav :commentNum="commentNum"></app-nav>
 
     <!-- 内容 -->
-    <router-view></router-view>
+    <!-- <keep-alive>主要用于保留组件状态或者避免重新渲染 -->
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -23,9 +26,8 @@ export default {
   },
   data(){
     return{
-      poiInfo:{
-
-      }
+      poiInfo:{},
+      commentNum:0
     }
   },
   // 钩子函数请求头部数据
@@ -39,6 +41,20 @@ export default {
       if(response.code == 0){
         // 拿到头部数据，赋值给poiInfo
         this.poiInfo = response.data.poi_info
+        // console.log(this.poiInfo)
+      }
+    })
+
+    // 请求rating数据
+    fetch("/api/ratings")
+    .then(res => {
+      return res.json()
+    })
+    .then(response => {
+      // console.log(response)
+      if(response.code == 0){
+        // 拿到评价条数数据，赋值给poiInfo
+        this.commentNum = response.data.comment_num
         // console.log(this.poiInfo)
       }
     })

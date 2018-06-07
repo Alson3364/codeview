@@ -27,7 +27,7 @@ export default {
 		itemClass() {
 			//   存放星星的空数组
 			let result = [];
-			//4.7分,计算分数得出星星状态
+			//4.7分,计算分数得出星星状态（星星为全星还是半星还是空星）
 			let score = Math.floor(this.score * 2) / 2;
 
 			//4.7分,计算分数得出半星状态个数
