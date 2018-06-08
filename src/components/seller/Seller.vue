@@ -90,11 +90,11 @@ export default {
         // 初始化滚动插件
         this.$nextTick(() => {
           // 如果图片数组存在
-          if(this.seller.poi_env_thunbnails_url_list){
+          if(this.seller.poi_env.thumbnails_url_list){
             // 拿到每张图片的可视宽度
             let imgW = this.$refs.picsItem[0].clientWidth
             let marginR = 11
-            let width = (imgW + marginR) * this.seller.poi_env_thunbnails_url_list.length
+            let width = (imgW + marginR) * this.seller.poi_env.thumbnails_url_list.length
 
             this.$refs.picsList.style.width = width + "px"
 
